@@ -8,10 +8,10 @@ public class Tank {
 	
 	public Tank(){
 		this.name = "Russian_partizans";
-		this.acceleration = -1;
-		this.speedMax = -1;
-		this.timeAim = -1;
-		this.chanceHit = -1;
+		this.acceleration = 0;
+		this.speedMax = 0;
+		this.timeAim = 0;
+		this.chanceHit = 0.0;
 	}
 	public Tank(String name, int acceleration, int speedMax, int timeAim, double chanceHit){
 		this.name = name;

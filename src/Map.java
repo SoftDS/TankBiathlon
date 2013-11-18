@@ -5,10 +5,16 @@ public class Map {
 	private int amountFL;			//Numbers of Firing lines
 	private Stage stage[];          //Massive of Stage
 	private FiringLine FL[];        //Massive of Firing Line
+	private int PenaltyLaps;				    //Numbers of penalty laps		(m)
 	
 	public Map(){
-		
+		PenaltyLaps = 0;
+		amountStage = 5;
+		amountFL = amountStage;
+		stage = new Stage[amountStage];
+		FL = new FiringLine[amountFL];		
 	}
+	
 	public Map(int amountStage){
 		this.amountStage = amountStage;
 		amountFL = amountStage;
