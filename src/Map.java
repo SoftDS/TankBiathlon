@@ -18,9 +18,13 @@ public class Map {
 	
 	public void createStage(){                        //Initialization of Stage objects massive
 		for(int i = 0; i < amountStage; i++)
+		{
 			stage[i] = new Stage();
-		for(int i = 0; i < amountFL; i++)             //   -//- FL obj mass
+		}
+		for(int i = 0; i < amountFL; i++)
+		{                                                           //   -//- FL obj mass
 			FL[i] = new FiringLine();
+		}
 	}
 //========================================================================	temp procedure
 	public void Print_map()
