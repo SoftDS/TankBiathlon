@@ -1,17 +1,26 @@
 
 public class FiringLine{
 	private int Target;                     //number of targets
-//	private int amountNotHitAim; 			//number of misses
+	private int Ammo;
+	private int Misses; 			//number of misses
 	
-//	public FiringLine(){
-//		this.amountNotHitAim = 0;
-//	}
+	public FiringLine(){
+		Misses = 0;
+		Target = 0;
+		Ammo = Target;
+	}
 	
-//	public FiringLine(int amountNotHitAim, int Target){
-//		this.amountNotHitAim = amountNotHitAim;
-//		this.Target = Target;
-//	}
+	public FiringLine(int Misses, int Target){
+		this.Misses = Misses;
+		this.Target = Target;
+	    Misses = Target;
+	}
 	public int GetTargets(){
 	return Target;
 	}
+	
+	public int GetMisses(){
+		return Misses;
+	}
 }
+
