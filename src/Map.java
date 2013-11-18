@@ -1,8 +1,8 @@
-//this is Map
+
 public class Map {
 	
-	private int amountStage;		//Количество этапов
-	private int amountFL;			//Количество рубежей
+	private int amountStage;		//Numbers of stage
+	private int amountFL;			//Numbers of Firing lines
 	private Stage stage[];
 	private FiringLine FL[];
 	
@@ -10,6 +10,7 @@ public class Map {
 		
 	}
 	public Map(int amountStage){
+		this.amountStage = amountStage;
 		amountFL = amountStage;
 		stage = new Stage[amountStage];
 		FL = new FiringLine[amountFL];

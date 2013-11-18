@@ -1,4 +1,4 @@
-//class of tank
+
 public class Tank {
 	private String name;                         //country of tank
 	private int acceleration; 					//value of accelerate 		(m\s^2)

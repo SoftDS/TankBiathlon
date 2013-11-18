@@ -1,6 +1,6 @@
 
 public class FiringLine{
-	private int amountNotHitAim; 			//Количество не пораженных целей
+	private int amountNotHitAim; 			//number of misses
 	
 	public FiringLine(){
 		this.amountNotHitAim = -1;
