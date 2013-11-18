@@ -5,11 +5,11 @@ public class Map {
 	private int amountFL;			//Numbers of Firing lines
 	private Stage stage[];          //Massive of Stage
 	private FiringLine FL[];        //Massive of Firing Line
-	private int PenaltyLaps;				    //Numbers of penalty laps		(m)
+	private int PenaltyLaps;	    //Numbers of penalty laps		(m)
 	
 	public Map(){
 		PenaltyLaps = 0;
-		amountStage = 5;
+		amountStage = 2;
 		amountFL = amountStage;
 		stage = new Stage[amountStage];
 		FL = new FiringLine[amountFL];		
@@ -22,21 +22,24 @@ public class Map {
 		FL = new FiringLine[amountFL];	
 	}
 	
-	public void createStage(){                        //Initialization of Stage objects massive
+	public void createMap(){                        //Initialization of Stage objects massive
 		for(int i = 0; i < amountStage; i++)
 		{
 			stage[i] = new Stage();
 		}
-		for(int i = 0; i < amountFL; i++)
-		{                                                           //   -//- FL obj mass
-			FL[i] = new FiringLine();
-		}
+//		for(int i = 0; i < amountFL; i++)
+//		{                                                           //   -//- FL obj mass
+//			FL[i] = new FiringLine();
+//		}
 	}
 //========================================================================	temp procedure
 	public void Print_map()
 	{
 	 	for(int ix = 0; ix < amountStage; ix++)
-	 		System.out.println(stage[ix]);
+	 	{
+	 		System.out.println("Этап № " + ix + stage[ix].getLenghtStage());
+	 	    System.out.println(stage[ix].getPassabilitySoil());
+	 	}
 	}
 //========================================================================	
 }

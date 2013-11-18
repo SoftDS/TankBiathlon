@@ -4,8 +4,8 @@ public class Stage {
 	private double PassabilitySoil;				//Passability		(0;1)
 	
 	public Stage(){
-		this.LenghtStage = 0;
-		this.PassabilitySoil = 0.0;
+		this.LenghtStage = 5;
+		this.PassabilitySoil = 3.14;
 	}
 	
 	public Stage(int LenghtStage, double PassabilitySoil){
