@@ -5,7 +5,7 @@ public class FiringLine{
 	private int Misses; 			//number of misses
 	
 	public FiringLine(){
-		Misses = 0;
+		Misses = 5;
 		Target = 0;
 		Ammo = Target;
 	}
