@@ -1,3 +1,4 @@
+//Здесь могла быть ваша реклама
 
 public class Tank {
 	private int acceleration; 					//значение ускорения 		(м\с^2)
