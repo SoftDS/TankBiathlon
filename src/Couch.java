@@ -1,5 +1,8 @@
 
 public class Couch {
 	
-	private 
+	private int MaxSpeedStage()
+	{
+		return 1;
+	}
 }
