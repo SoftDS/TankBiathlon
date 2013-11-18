@@ -3,8 +3,8 @@ public class Map {
 	
 	private int amountStage;		//Numbers of stage
 	private int amountFL;			//Numbers of Firing lines
-	private Stage stage[];
-	private FiringLine FL[];
+	private Stage stage[];          //Massive of Stage
+	private FiringLine FL[];        //Massive of Firing Line
 	
 	public Map(){
 		
@@ -13,12 +13,20 @@ public class Map {
 		this.amountStage = amountStage;
 		amountFL = amountStage;
 		stage = new Stage[amountStage];
-		FL = new FiringLine[amountFL];
-		
+		FL = new FiringLine[amountFL];	
 	}
 	
-	public void createStage(){
-		
+	public void createStage(){                        //Initialization of Stage objects massive
+		for(int i = 0; i < amountStage; i++)
+			stage[i] = new Stage();
+		for(int i = 0; i < amountFL; i++)             //   -//- FL obj mass
+			FL[i] = new FiringLine();
 	}
-	
+//========================================================================	temp procedure
+	public void Print_map()
+	{
+	 	for(int ix = 0; ix < amountStage; ix++)
+	 		System.out.println(stage[ix]);
+	}
+//========================================================================	
 }
