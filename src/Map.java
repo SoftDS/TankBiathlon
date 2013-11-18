@@ -1,5 +1,6 @@
-
+//this is Map
 public class Map {
+	
 	private int amountStage;		//Количество этапов
 	private int amountFL;			//Количество рубежей
 	private Stage stage[];
