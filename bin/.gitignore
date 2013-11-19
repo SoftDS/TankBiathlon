@@ -1,10 +1,8 @@
-/Controller.class
-/Couch.class
 /FiringLine.class
+/Interface.class
+/Judge.class
 /Map.class
 /Stage.class
-/TableResult.class
 /Tank.class
 /TankBiathlon.class
-/Judge.class
-/Interface.class
+/View.class
