@@ -1,8 +1,8 @@
 
 public class Judge {
-	
-	private int MaxSpeedStage()
+		
+	public double MaxSpeedStage (int MaxSpeed, double Passability)
 	{
-		return 1;
+		return MaxSpeed * Passability;
 	}
 }

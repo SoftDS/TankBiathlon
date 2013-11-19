@@ -28,13 +28,16 @@ public class Map {
 		this.tanks = new Tank[amountTanks];
 	}
 	
-	public void createMap(){                                       //Initialization of Stage objects massive
+	public void BeginningThisHell(){                                       //Initialization of Stage objects massive
+		Judge judge = new Judge();                                 
 		for (int itanks = 0; itanks < amountTanks; itanks++)
 		{
 			tanks[itanks] = new Tank();
 		 for(int i = 0; i < amountStage; i++)
 		  {
 			stage[i] = new Stage();
+			judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(),
+								stage[i].getPassability());
 		  }
 		 for(int i = 0; i < amountFL; i++)
 		  {                                                           //   -//- FL obj mass
@@ -53,6 +56,7 @@ public class Map {
 	 	{
 	 		System.out.println(stage[ix].getLenghtStage());
 	 		System.out.println(FL[ix].GetMisses());
+	 		
 	 	}
 	}
 //========================================================================	
