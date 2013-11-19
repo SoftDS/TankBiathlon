@@ -5,27 +5,20 @@ public class Interface{
 	
 	private String str[][];
 	private View view = new View();
+	Scanner scn;
 	
-	private int CountNumberLines(Scanner scn) //out of service!!!!!!
+	private int CountNumberLines() //out of service!!!!!!
 	{
 		int i = 0;
-		while(scn.hasNextLine())
-		{
-			i++;
-		}
-		
-	return i;
+		for(i=0; scn.hasNextLine(); i++) 
+			scn.next();	
+		return i;
 	}
 	
 	public void OpenFile(String filepath) //out of service!!!!!!
 	{
 		try{
-			Scanner scn = new Scanner(new File(filepath));
-			int i = 0;
-			/*while(scn.hasNextLine()){
-				i++;
-			}*/
-			System.out.println(i);
+			scn = new Scanner(new File(filepath));
 		}
 		catch(Exception e){		
 			view.printError(-1);
@@ -36,7 +29,7 @@ public class Interface{
 	
 	public void ReadFile()
 	{
-		//System.out.println(CountNumberLines());
+		System.out.println(CountNumberLines());
 	}
 
 }
