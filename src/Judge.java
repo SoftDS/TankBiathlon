@@ -1,5 +1,5 @@
 
-public class Couch {
+public class Judge {
 	
 	private int MaxSpeedStage()
 	{
