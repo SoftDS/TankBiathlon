@@ -10,6 +10,5 @@ public class View {
 	public void printError(int err)
 	{
 		if(err==-1)	System.out.println("File not found");
-		
 	}
 }

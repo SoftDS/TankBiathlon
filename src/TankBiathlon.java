@@ -7,7 +7,7 @@ public class TankBiathlon {
 	public static void main(String[] args){
 		
 		Map map = new Map();
-		map.createMap();
+		map.BeginningThisHell();
 		map.Print_map();
 	//=======================//
 		Interface interf = new Interface();
