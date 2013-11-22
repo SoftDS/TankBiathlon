@@ -12,9 +12,9 @@ public class TankBiathlon {
 	//=======================//
 		Interface interf = new Interface();
 		interf.OpenFile(FILE_PATH1);
-		interf.ReadFile();
+		interf.ReadFile(5);
 		interf.OpenFile(FILE_PATH2);
-		interf.ReadFile();
+		interf.ReadFile(2);
 	
 	}
 

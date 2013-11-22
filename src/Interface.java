@@ -1,9 +1,10 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Interface{
 	
-	private String str[][];
+	String dataFromTheFile[][];
 	private View view = new View();
 	Scanner scn;
 	
@@ -27,15 +28,13 @@ public class Interface{
 		
 	}
 	
-	public void ReadFile() //out of service !!
+	public void ReadFile(int numberFields) 
 	{
-		//CountNumberFields();
-		//System.out.println(CountNumberFields());
-		/*str[CountNumberLines()][10] = new String();
+		dataFromTheFile = new String[CountNumberLines()][numberFields];
 		for(int row = 0; row < CountNumberLines(); row++){
-			for(int col = 0; col < 10; col++)
-				str[row][col] = scn.next();
-		}*/
+			for(int col = 0; col < numberFields; col++)
+				dataFromTheFile[row][col] = scn.next();
+		}
 	}
 
 }
