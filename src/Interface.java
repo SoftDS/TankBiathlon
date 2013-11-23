@@ -11,42 +11,30 @@ public class Interface{
 	public static final String FILE_PATH1 = "res/DataAboutTanks.txt";
 	public static final String FILE_PATH2 = "res/DataAboutStages.txt";
 	
-	private int CountNumberLines() 
-	{
-		int i;
-		for(i = 0; scn.hasNextLine(); i++){
-			scn.nextLine();
-		}
-		return i;
-	}
 	public void Run()
 	{
-		OpenFile(FILE_PATH1, 5);
-		OpenFile(FILE_PATH2, 2);
+		OpenFile(FILE_PATH1, 6, 5);
+		OpenFile(FILE_PATH2, 3, 2);
 	}
 	
-	public void OpenFile(String filepath, int numberFields) 
+	public void OpenFile(String filepath, int numberLines, int numberFields) 
 	{
 		try {
 			scn = new Scanner(new File(filepath));
-			//int numberLines = CountNumberLines();
-			ReadFile(numberFields, CountNumberLines());
+			ReadFile(numberLines, numberFields);
 		} 
 		catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
 
-		
 	}
 	
-	public void ReadFile(int numberFields, int numberLines) 
+	public void ReadFile(int numberLines, int numberFields) 
 	{
 		dataFromTheFile = new String[numberLines][numberFields];
-		System.out.println(numberFields + " " + numberLines);
 		for(int row = 0; row < numberLines; row++){
 			for(int col = 0; col < numberFields; col++){
 				dataFromTheFile[row][col] = scn.next();
-				System.out.println("Hello");
 			}
 		}
 	}
