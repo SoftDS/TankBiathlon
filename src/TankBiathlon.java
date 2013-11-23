@@ -1,9 +1,6 @@
 
 public class TankBiathlon {
 	
-	public static final String FILE_PATH1 = "res/DataAboutTanks.txt";
-	public static final String FILE_PATH2 = "res/DataAboutStages.txt";
-	
 	public static void main(String[] args){
 		
 		Map map = new Map();
@@ -11,8 +8,7 @@ public class TankBiathlon {
 		map.Print_map();
 	//=======================//
 		Interface interf = new Interface();
-		interf.OpenFile(FILE_PATH1, 5);
-		interf.OpenFile(FILE_PATH2, 2);
+		interf.Run();
 	
 	}
 

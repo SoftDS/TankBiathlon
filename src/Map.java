@@ -28,7 +28,7 @@ public class Map {
 		this.tanks = new Tank[amountTanks];
 	}
 	
-	public void BeginningThisHell(){                                       //Initialization of Stage objects massive
+	public void BeginningThisHell(){									//Initialization of Stage objects massive
 		Judge judge = new Judge();                                 
 		for (int itanks = 0; itanks < amountTanks; itanks++)
 		{

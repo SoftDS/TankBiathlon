@@ -7,8 +7,8 @@ public class View {
 		System.out.println();
 	}
 	
-	public void printError(int err)
-	{
-		if(err==-1)	System.out.println("File not found");
-	}
+//	public void printError(int err)
+//	{
+//		if(err==-1)	System.out.println("File not found");
+//	}
 }

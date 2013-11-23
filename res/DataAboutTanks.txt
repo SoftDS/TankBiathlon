@@ -3,3 +3,4 @@ Russia	20	85	2  0.5
 French  15	60	2  0.8
 England 5	50	5  0.7
 USA     17	80	2  0.5	
+Japan	16	75	3  0.6

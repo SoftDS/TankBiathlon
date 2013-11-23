@@ -4,9 +4,12 @@ import java.util.*;
 
 public class Interface{
 	
+	Scanner scn;
 	String dataFromTheFile[][];
 	private View view = new View();
-	Scanner scn;
+	
+	public static final String FILE_PATH1 = "res/DataAboutTanks.txt";
+	public static final String FILE_PATH2 = "res/DataAboutStages.txt";
 	
 	private int CountNumberLines() 
 	{
@@ -16,25 +19,35 @@ public class Interface{
 		}
 		return i;
 	}
+	public void Run()
+	{
+		OpenFile(FILE_PATH1, 5);
+		OpenFile(FILE_PATH2, 2);
+	}
 	
 	public void OpenFile(String filepath, int numberFields) 
 	{
-		try{
+		try {
 			scn = new Scanner(new File(filepath));
-			ReadFile(numberFields);
+			//int numberLines = CountNumberLines();
+			ReadFile(numberFields, CountNumberLines());
+		} 
+		catch (FileNotFoundException e1) {
+			e1.printStackTrace();
 		}
-		catch(Exception e){		
-			view.printError(-1);
-		}
+
 		
 	}
 	
-	private void ReadFile(int numberFields) 
+	public void ReadFile(int numberFields, int numberLines) 
 	{
-		dataFromTheFile = new String[CountNumberLines()][numberFields];
-		for(int row = 0; row < CountNumberLines(); row++){
-			for(int col = 0; col < numberFields; col++)
+		dataFromTheFile = new String[numberLines][numberFields];
+		System.out.println(numberFields + " " + numberLines);
+		for(int row = 0; row < numberLines; row++){
+			for(int col = 0; col < numberFields; col++){
 				dataFromTheFile[row][col] = scn.next();
+				System.out.println("Hello");
+			}
 		}
 	}
 
