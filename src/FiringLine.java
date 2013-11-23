@@ -10,9 +10,9 @@ public class FiringLine{
 		Ammo = Target + 1;
 	}
 	
-	public FiringLine(int Misses, int Target){
-		this.Misses = Misses;
+	public FiringLine(int Target){
 		this.Target = Target;
+		this.Misses = 0;
 	    Ammo = this.Target + 1;
 	}
 	public int GetTargets(){
