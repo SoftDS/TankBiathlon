@@ -6,7 +6,7 @@ public class Interface{
 	
 	Scanner scn;
 	String dataFromTheFile[][];
-	private View view = new View();
+	private TableResult view = new TableResult();
 	private Map map = new Map();
 	
 	public static final String FILE_PATH1 = "res/DataAboutTanks.txt";

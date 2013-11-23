@@ -1,5 +1,5 @@
 
-public class View {
+public class TableResult{
 	
 	//print table of results
 	public void printTableResult()
