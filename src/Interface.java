@@ -2,11 +2,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Interface{
-	
-	Scanner scn;
-	String dataFromTheFile[][];
-	private TableResult view = new TableResult();
+public class Interface{                   //class change to interface and read about it on http://kostin.ws/java/java-abstract-and-interfaces.html
+	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	Scanner scn;   //!!!!!!!!!!!!!!!!!!!!!!!
+	String dataFromTheFile[][];  //!!!!!!!!!!!!!!!!!!!!!!!
+	private TableResult view = new TableResult();  //!!!!!!!!!!!!!!!!!!!!!1
 	private Map map = new Map();
 	
 	public static final String FILE_PATH1 = "res/DataAboutTanks.txt";

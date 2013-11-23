@@ -28,25 +28,40 @@ public class Map {
 		this.tanks = new Tank[amountTanks];
 	}
 	
-	public void BeginningThisHell(){									//Initialization of Stage objects massive
+	public void BeginningThisHell(){
+           
+		                                              
 		Judge judge = new Judge();                                 
 		for (int itanks = 0; itanks < amountTanks; itanks++)
 		{
-			//tanks[itanks] = new Tank(itanks, str);
-		 for(int i = 0; i < amountStage; i++)
-		  {
-			//stage[i] = new Stage();
-			judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(),
-								stage[i].getPassability());
-		  }
-		 for(int i = 0; i < amountFL; i++)
-		  {                                                           //   -//- FL obj mass
-			FL[i] = new FiringLine();
-		  }
+			 for(int i = 0; i < amountStage; i++)
+			  {
+				judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(),
+									stage[i].getPassability());
+			  }
+			 for(int i = 0; i < amountFL; i++)
+			  {       
+				 int Ammo=FL[i].getAmmo();
+//				 int Misses=FL[i].getMisses();
+				 int Target=FL[i].getTarget();  
+				 for(int j=Ammo; j>0; j--)
+				   {                         
+				   if (judge.Hit(tanks[itanks].GetChanceHit()))
+				        {
+					    Target--;
+				        }
+//					   else
+//					   {
+//						Misses++;   
+//					   }
+			   
+				   }  
+				PenaltyLaps=Target;                        //- Снаряды, + промахи если не попал, - Мишени если попал, 
+			  } 
 		}
 	}
 	public void InitializationTank(String str[][]){
-		for (int itanks = 0; itanks < amountTanks; itanks++){
+		for (int itanks = 0; itanks < amountTanks; itanks++){           //Initialization of Stage objects massive
 			tanks[itanks] = new Tank(itanks, str);
 		}
 	}
@@ -70,7 +85,7 @@ public class Map {
 	 	for(int ix = 0; ix < amountStage; ix++)
 	 	{
 	 		System.out.println(stage[ix].getLenghtStage());
-	 		System.out.println(FL[ix].GetMisses());
+//	 		System.out.println(FL[ix].GetMisses());
 	 		
 	 	}
 	}

@@ -5,15 +5,15 @@ public class FiringLine{
 	private int Misses; 			//number of misses
 	
 	public FiringLine(){
-		Misses = 0;
+		setMisses(0);
 		Target = 0;
-		Ammo = Target + 1;
+		setAmmo(Target + 1);
 	}
 	
 	public FiringLine(int Target){
 		this.Target = Target;
-		this.Misses = 0;
-	    Ammo = this.Target + 1;
+		this.setMisses(0);
+	    setAmmo(this.Target + 1);
 	}
 //	public FiringLine(int Misses, int Target){
 //		this.Misses = Misses;
@@ -21,17 +21,32 @@ public class FiringLine{
 //	    Ammo = this.Target + 1;
 //	}
 	public FiringLine(int i, String str[][]){
-		this.Misses = 0;
+		this.setMisses(0);
 		this.Target = Integer.parseInt(str[i][2]);
-		Ammo = this.Target + 1;
+		setAmmo(this.Target + 1);
+	}
 
-	}
-	public int GetTargets(){
-	return Target;
-	}
-	
-	public int GetMisses(){
+	public int getMisses() {
 		return Misses;
+	}
+
+	public void setMisses(int misses) {
+		Misses = misses;
+	}
+
+	public int getAmmo() {
+		return Ammo;
+	}
+
+	public void setAmmo(int ammo) {
+		Ammo = ammo;
+	}
+	public int getTarget() {
+		return Target;
+	}
+
+	public void setTarget(int target) {
+		Target = target;
 	}
 }
 
