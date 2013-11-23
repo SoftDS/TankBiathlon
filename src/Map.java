@@ -28,11 +28,11 @@ public class Map {
 		this.tanks = new Tank[amountTanks];
 	}
 	
-	public void BeginningThisHell(){									//Initialization of Stage objects massive
+	public void BeginningThisHell(String str[][]){									//Initialization of Stage objects massive
 		Judge judge = new Judge();                                 
 		for (int itanks = 0; itanks < amountTanks; itanks++)
 		{
-			tanks[itanks] = new Tank();
+			tanks[itanks] = new Tank(itanks, str);
 		 for(int i = 0; i < amountStage; i++)
 		  {
 			stage[i] = new Stage();
@@ -45,6 +45,7 @@ public class Map {
 		  }
 		}
 	}
+	
 //========================================================================	temp procedure
 	public void Print_map()
 	{

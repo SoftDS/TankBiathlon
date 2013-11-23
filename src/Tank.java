@@ -13,12 +13,19 @@ public class Tank {
 		this.timeAim = 0;
 		this.chanceHit = 0.0;
 	}
-	public Tank(String name, int acceleration, int speedMax, int timeAim, double chanceHit){
-		this.name = name;
-		this.acceleration = acceleration;
-		this.speedMax = speedMax;
-		this.timeAim = timeAim;
-		this.chanceHit = chanceHit;	
+//	public Tank(String name, int acceleration, int speedMax, int timeAim, double chanceHit){
+//		this.name = name;
+//		this.acceleration = acceleration;
+//		this.speedMax = speedMax;
+//		this.timeAim = timeAim;
+//		this.chanceHit = chanceHit;	
+//	}
+	public Tank(int itanks, String str[][]){
+		this.name = str[itanks][0];
+		this.acceleration = Integer.parseInt(str[itanks][1]);
+		this.speedMax = Integer.parseInt(str[itanks][2]);
+		this.timeAim = Integer.parseInt(str[itanks][3]);
+		this.chanceHit = Double.parseDouble(str[itanks][4]);
 	}
 	public int GetAcceleration(){
 		return acceleration;

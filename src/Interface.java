@@ -7,6 +7,7 @@ public class Interface{
 	Scanner scn;
 	String dataFromTheFile[][];
 	private View view = new View();
+	private Map map = new Map();
 	
 	public static final String FILE_PATH1 = "res/DataAboutTanks.txt";
 	public static final String FILE_PATH2 = "res/DataAboutStages.txt";
@@ -15,6 +16,7 @@ public class Interface{
 	{
 		OpenFile(FILE_PATH1, 6, 5);
 		OpenFile(FILE_PATH2, 3, 2);
+		
 	}
 	
 	public void OpenFile(String filepath, int numberLines, int numberFields) 
