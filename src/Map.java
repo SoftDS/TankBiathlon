@@ -57,7 +57,7 @@ public class Map {
 	}
 	public void InitializationFL(String str[][]){
 		 for(int i = 0; i < amountFL; i++){                                                          
-			FL[i] = new FiringLine();
+			FL[i] = new FiringLine(i, str);
 		  }
 	}
 //========================================================================	temp procedure
