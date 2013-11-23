@@ -10,10 +10,15 @@ public class FiringLine{
 		Ammo = Target + 1;
 	}
 	
-	public FiringLine(int Misses, int Target){
-		this.Misses = Misses;
-		this.Target = Target;
-	    Ammo = this.Target + 1;
+//	public FiringLine(int Misses, int Target){
+//		this.Misses = Misses;
+//		this.Target = Target;
+//	    Ammo = this.Target + 1;
+//	}
+	public FiringLine(int i, String str[][]){
+		this.Misses = 0;
+		this.Target = Integer.parseInt(str[i][2]);
+		Ammo = this.Target + 1;
 	}
 	public int GetTargets(){
 	return Target;

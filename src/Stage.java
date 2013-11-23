@@ -10,9 +10,13 @@ public class Stage {
 		this.Passability = 0.0;
 	}
 	
-	public Stage(int LenghtStage, double Passability){
-		this.LenghtStage = LenghtStage;
-		this.Passability = Passability;
+//	public Stage(int LenghtStage, double Passability){
+//		this.LenghtStage = LenghtStage;
+//		this.Passability = Passability;
+//	}
+	public Stage(int i, String str[][]){
+		this.LenghtStage = Integer.parseInt(str[i][0]);
+		this.Passability = Double.parseDouble(str[i][1]);
 	}
 	public int getLenghtStage(){
 		return LenghtStage;
