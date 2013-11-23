@@ -11,10 +11,8 @@ public class TankBiathlon {
 		map.Print_map();
 	//=======================//
 		Interface interf = new Interface();
-		interf.OpenFile(FILE_PATH1);
-		interf.ReadFile(5);
-		interf.OpenFile(FILE_PATH2);
-		interf.ReadFile(2);
+		interf.OpenFile(FILE_PATH1, 5);
+		interf.OpenFile(FILE_PATH2, 2);
 	
 	}
 

@@ -17,10 +17,11 @@ public class Interface{
 		return i;
 	}
 	
-	public void OpenFile(String filepath) 
+	public void OpenFile(String filepath, int numberFields) 
 	{
 		try{
 			scn = new Scanner(new File(filepath));
+			ReadFile(numberFields);
 		}
 		catch(Exception e){		
 			view.printError(-1);
@@ -28,7 +29,7 @@ public class Interface{
 		
 	}
 	
-	public void ReadFile(int numberFields) 
+	private void ReadFile(int numberFields) 
 	{
 		dataFromTheFile = new String[CountNumberLines()][numberFields];
 		for(int row = 0; row < CountNumberLines(); row++){
