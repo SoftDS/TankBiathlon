@@ -21,8 +21,8 @@ public class FiringLine{
 //	    Ammo = this.Target + 1;
 //	}
 	public FiringLine(int i, String str[][]){
-		this.setMisses(0);
-		this.Target = Integer.parseInt(str[i][2]);
+		//this.setMisses(0);
+		this.Target = Integer.parseInt(str[i][4]);
 		setAmmo(this.Target + 1);
 	}
 

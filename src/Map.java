@@ -8,6 +8,7 @@ public class Map {
 	private FiringLine FL[];        //Massive of Firing Line
 	private int PenaltyLaps;	    //Numbers of penalty laps		(m)
 	private Tank tanks[];
+	Judge judge = new Judge();    
          
 		
 	public Map(){
@@ -28,37 +29,42 @@ public class Map {
 		this.tanks = new Tank[amountTanks];
 	}
 	
-	public void BeginningThisHell(){
-           
-		                                              
-		Judge judge = new Judge();                                 
+	public void BeginningThisHell(){                         
 		for (int itanks = 0; itanks < amountTanks; itanks++)
 		{
-			 for(int i = 0; i < amountStage; i++)
-			  {
-				judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(),
-									stage[i].getPassability());
-			  }
-			 for(int i = 0; i < amountFL; i++)
-			  {       
-				 int Ammo=FL[i].getAmmo();
-//				 int Misses=FL[i].getMisses();
-				 int Target=FL[i].getTarget();  
-				 for(int j=Ammo; j>0; j--)
-				   {                         
-				   if (judge.Hit(tanks[itanks].GetChanceHit()))
-				        {
-					    Target--;
-				        }
-//					   else
-//					   {
-//						Misses++;   
-//					   }
-			   
-				   }  
-				PenaltyLaps=Target;                        //- Снаряды, + промахи если не попал, - Мишени если попал, 
-			  } 
+			HellwithStages(itanks);
+			HellwithFL(itanks);
 		}
+	}
+	public void HellwithStages(int itanks){
+		double MaxSpeed;
+		for(int i = 0; i < amountStage; i++)
+		  {
+			MaxSpeed = judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(), stage[i].getPassability());
+			//judge.TimeOnLap(MaxSpeed, LengthLap) !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			
+		  }
+	}
+	public void HellwithFL(int itanks){
+		 for(int i = 0; i < amountFL; i++)
+		  {       
+			 int Ammo=FL[i].getAmmo();
+//			 int Misses=FL[i].getMisses();
+			 int Target=FL[i].getTarget();  
+			 for(int j=Ammo; j>0; j--)
+			 {                         
+			   if(judge.Hit(tanks[itanks].GetChanceHit()))
+			   {
+				   Target--;
+			   }
+//				   else
+//				   { 
+//					Misses++;   
+//				   }
+		   
+			   }  
+			 PenaltyLaps=Target; 						//1. штрафные круги дописать
+		  } 
 	}
 	public void InitializationTank(String str[][]){
 		for (int itanks = 0; itanks < amountTanks; itanks++){           //Initialization of Stage objects massive

@@ -14,9 +14,10 @@ public class Interface{                   //class change to interface and read a
 	
 	public void Run()
 	{
-		OpenFile(FILE_PATH1, 6, 5);
-		OpenFile(FILE_PATH2, 3, 2);
-		
+		OpenFile(FILE_PATH1, 6, 5); ///////////////Подсчет строк!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		OpenFile(FILE_PATH2, 3, 2);//В конструктор для ввода руками
+									/*МИССИЯ НЕВЫПОЛНИМА*/
+						
 	}
 	
 	public void OpenFile(String filepath, int numberLines, int numberFields) 

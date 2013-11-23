@@ -9,6 +9,8 @@ public class TankBiathlon {
 	//=======================//
 		Interface interf = new Interface();
 		interf.Run();
+		//Judge j = new Judge();
+		//j.TimeOnLap();
 	
 	}
 
