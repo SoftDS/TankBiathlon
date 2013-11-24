@@ -12,6 +12,15 @@ public class TableResult{
 		CreateTable = new String[amountTanks][amountStage];
 	}
 	
+	public void printData(String[][] str){
+		for(String []a: str)
+		{
+			for(String b: a)
+				System.out.print(b + " ");
+				System.out.println();
+		}
+	}
+	
 //	public void printError(int err)
 //	{
 //		if(err==-1)	System.out.println("File not found");

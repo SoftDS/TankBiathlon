@@ -7,38 +7,35 @@ public class Interface{                   //class change to interface and read a
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	Scanner scn;   //!!!!!!!!!!!!!!!!!!!!!!!
 	String dataFromTheFile[][];  //!!!!!!!!!!!!!!!!!!!!!!!
-	//private TableResult view = new TableResult();  //!!!!!!!!!!!!!!!!!!!!!1
-	//private Map map = new Map();  А нахуя тут вообще карта? Почему Классы вызываются в интерфейсе, а не наоборот???!
-                                    //сегодня разобрал этот класс подробно и понял что тут пиздец сколько переделывать) он же бесполезный)))	
+	//private TableResult view = new TableResult();
+	//private Map map = new Map(); 
+	
 	public static final String FILE_PATH1 = "res/DataAboutTanks.txt";
 	public static final String FILE_PATH2 = "res/DataAboutStages.txt";
 	
-	public void Run()
+	public String[][] Run(int a)
 	{
-		OpenFile(FILE_PATH1, 6, 5); ///////////////Подсчет строк!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		OpenFile(FILE_PATH2, 3, 2);//В конструктор для ввода руками
-									/*МИССИЯ НЕВЫПОЛНИМА*/				
+		if(a==1)			////Номер 1 это первый ФАЙЛ!!
+			return ReadFile(FILE_PATH1, 6, 5); 					///////////////Подсчет строк!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		else
+			return ReadFile(FILE_PATH2, 3, 5);					//В конструктор для ввода руками		
 	}
 	
-	public void OpenFile(String filepath, int numberLines, int numberFields) 
+	public String[][] ReadFile(String filepath, int numberLines, int numberFields) 
 	{
 		try {
 			scn = new Scanner(new File(filepath));
-			ReadFile(numberLines, numberFields);
+			dataFromTheFile = new String[numberLines][numberFields];
+			for(int row = 0; row < numberLines; row++){
+				for(int col = 0; col < numberFields; col++){
+					dataFromTheFile[row][col] = scn.next();
+				}
+			}
 		} 
 		catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
+		return dataFromTheFile;
 	}
-	
-	public void ReadFile(int numberLines, int numberFields) 
-	{
-		dataFromTheFile = new String[numberLines][numberFields];
-		for(int row = 0; row < numberLines; row++){
-			for(int col = 0; col < numberFields; col++){
-				dataFromTheFile[row][col] = scn.next();
-			}
-		}
-	}
-
 }
+
