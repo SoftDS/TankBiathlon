@@ -21,6 +21,7 @@ public class Tank {
 //		this.chanceHit = chanceHit;	
 //	}
 	public Tank(int itanks, String str[][]){
+		
 		this.name = str[itanks][0];
 		this.acceleration = Integer.parseInt(str[itanks][1]);
 		this.speedMax = Integer.parseInt(str[itanks][2]);

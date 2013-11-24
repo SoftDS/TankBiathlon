@@ -5,7 +5,7 @@ public class Judge {
 	{
 		return MaxSpeed * Passability;
 	}
-    public boolean Hit (double ChanceHit) //////Учесть время наведения
+    public boolean CountHit (double ChanceHit) //////Учесть время наведения
     {
 	    boolean HitTable[];
 	    HitTable = new boolean[10];

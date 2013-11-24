@@ -48,5 +48,19 @@ public class FiringLine{
 	public void setTarget(int target) {
 		Target = target;
 	}
+	public void Hit(boolean b){
+		for(int j=Ammo; j>0; j--)
+		{                         
+		  if(b)//1. штрафные круги дописать
+		  {
+			   Target--;
+		  }
+//			   else
+//			   { 
+//				Misses++;   
+//			   }
+	   
+		  }  
+	}
 }
 
