@@ -48,19 +48,19 @@ public class FiringLine{
 	public void setTarget(int target) {
 		Target = target;
 	}
-	public void Hit(boolean b){
+	
+	public boolean Hit(boolean b) 		//1. штрафные круги дописать
+	{ 
 		for(int j=Ammo; j>0; j--)
-		{                         
-		  if(b)//1. штрафные круги дописать
+		{           
+		  if(b) //Если попал, то осталось на одну мишень меньше
 		  {
-			   Target--;
-		  }
-//			   else
-//			   { 
-//				Misses++;   
-//			   }
-	   
-		  }  
+			  Target--;
+			   if(Target == 0)//если все цели сбиты
+				   return true;			   
+		  }	   
+		}  
+		return false; //если НЕ все цели сбиты
 	}
 }
 

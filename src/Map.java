@@ -31,15 +31,18 @@ public class Map {
 		this.tanks = new Tank[amountTanks];
 	}
 	
-	public void BeginningThisHell(){  
+	public void BeginningThisHell(String str1[][], String str2[][]){  
+		InitializationTank(str1);
 		for (int itanks = 0; itanks < amountTanks; itanks++)
 		{
-			System.out.println("itanks: "+itanks);
+			InitializationStage(str2);			//Для каждого танка этап заново готовится для езды
+			InitializationFL(str2);				//Также
+			//System.out.println("itanks: "+itanks);
 			double MaxSpeed;
 			for(int i = 0; i < amountStage; i++)
 			  {
 				MaxSpeed = judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(), stage[i].getPassability());
-				System.out.println("stage: "+i);
+				//System.out.println("stage: "+i);
 				System.out.println("FL: "+i);
 				
 				FL[i].Hit(judge.CountHit(tanks[itanks].GetChanceHit()));
