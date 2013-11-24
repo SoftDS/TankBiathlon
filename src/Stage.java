@@ -3,7 +3,7 @@ public class Stage {
 	private int NStage;                         //#Stage
 	private int LenghtStage;					//Length				(m)
 	private double Passability;				//Passability		(0;1)
-	private int LengthPenaltyLap;
+	private int LengthPenaltyLap;           //Penalty
 	
 	
 	public Stage(){
@@ -32,5 +32,7 @@ public class Stage {
 	public int getNStage(){
 		return NStage;
 	}
-	
+	public int PenaltyLaps(int Penalty){	
+	return LengthPenaltyLap*Penalty;	
+	}
 }

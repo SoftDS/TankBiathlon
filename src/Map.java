@@ -6,7 +6,6 @@ public class Map {
 	private int amountTanks;
 	private Stage stage[];          //Massive of Stage
 	private FiringLine FL[];        //Massive of Firing Line
-	private int PenaltyLaps;	    //Numbers of penalty laps		(m)
 	private Tank tanks[];
 	Judge judge = new Judge();    
          
@@ -32,22 +31,26 @@ public class Map {
 	}
 	
 	public void BeginningThisHell(String str1[][], String str2[][]){  
+		
+		double MaxSpeed;
+		int[] TimeMassive =new int [amountStage + 1];
+		
 		InitializationTank(str1);
 		for (int itanks = 0; itanks < amountTanks; itanks++)
 		{
 			InitializationStage(str2);			//Для каждого танка этап заново готовится для езды
 			InitializationFL(str2);				//Также
-			//System.out.println("itanks: "+itanks);
-			double MaxSpeed;
+			//System.out.println("itanks: "+itanks);			
 			for(int i = 0; i < amountStage; i++)
 			  {
 				MaxSpeed = judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(), stage[i].getPassability());
-				//System.out.println("stage: "+i);
-				System.out.println("FL: "+i);
-				
-				FL[i].Hit(judge.CountHit(tanks[itanks].GetChanceHit()));
-				PenaltyLaps=FL[i].getTarget();
-				System.out.println(FL[i].getTarget());
+/*Здесь нужно соханить время как 1ый танк на 1м этапе*/		TimeMassive[i]=judge.TimeOnLap(MaxSpeed, LengthLap, Acceleration);
+				FL[i].Hit(judge.CountHit(tanks[itanks].GetChanceHit()));                            
+				    if (FL[i].getTarget()>0)
+					{
+/*Здесь нужно добавить, если есть, штрафное время, к прошлому*/	TimeMassive[i] += judge.TimeOnLap(MaxSpeed, stage[i].PenaltyLaps(FL[i].getTarget()), tanks[itanks].GetAcceleration());				
+					}
+/*Сохранить время*/judge.SaveResult(tanks[itanks].getName(),TimeMassive[i]);
 			  }
 		}
 	}

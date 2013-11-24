@@ -1,5 +1,5 @@
 
-public class TableResult{
+public class TableResult{  //вообще не знаю зачем этот класс ??! =)
 	
 	//print table of results
 	public void printTableResult()
@@ -7,10 +7,12 @@ public class TableResult{
 		System.out.println();
 	}
 	
-	public void CreateTable(int amountTanks,int amountStage){
+	public void CreateTable(String[][] str){
 		String CreateTable[][];
-		CreateTable = new String[amountTanks][amountStage];
+		CreateTable = new String[amountTanks][amountStage+1];
 	}
+	
+	public void AddTanksResult()
 	
 	public void printData(String[][] str){
 		for(String []a: str)

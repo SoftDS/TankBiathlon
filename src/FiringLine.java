@@ -62,5 +62,6 @@ public class FiringLine{
 		}  
 		return false; //если НЕ все цели сбиты
 	}
+
 }
 

@@ -1,5 +1,6 @@
 
 public class Judge {
+	private TableResult Result = new TableResult();
 	
 	public double MaxSpeedStage (int MaxSpeed, double Passability)
 	{
@@ -26,7 +27,5 @@ public class Judge {
   //s=v0t+at^2/2    http://znanija.com/task/330035
   //Итоговый подсчет времени
     //Сохранение в таблице результатов
-    public void SaveResult() {
-    	
-    }
+
 }
