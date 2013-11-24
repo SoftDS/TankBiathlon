@@ -10,7 +10,7 @@ public class Map {
 	private Tank tanks[];
 	Judge judge = new Judge();    
          
-		
+	
 	public Map(){
 		PenaltyLaps = 0;
 		amountStage = 3;
@@ -32,38 +32,33 @@ public class Map {
 	public void BeginningThisHell(){                         
 		for (int itanks = 0; itanks < amountTanks; itanks++)
 		{
-			HellwithStages(itanks);
-			HellwithFL(itanks);
+			double MaxSpeed;
+			for(int i = 0; i < amountStage; i++)
+			  {
+				MaxSpeed = judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(), stage[i].getPassability());
+			  }
+			 for(int i = 0; i < amountFL; i++)
+			  {       
+				 int Ammo=FL[i].getAmmo();
+//				 int Misses=FL[i].getMisses();
+				 int Target=FL[i].getTarget();  
+				 for(int j=Ammo; j>0; j--)
+				 {                         
+				   if(judge.Hit(tanks[itanks].GetChanceHit()))
+				   {
+					   Target--;
+				   }
+//					   else
+//					   { 
+//						Misses++;   
+//					   }
+			   
+				   }  
+				 PenaltyLaps=Target; 						//1. штрафные круги дописать
+			  } 
 		}
 	}
-	public void HellwithStages(int itanks){
-		double MaxSpeed;
-		for(int i = 0; i < amountStage; i++)
-		  {
-			MaxSpeed = judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(), stage[i].getPassability());
-		  }
-	}
-	public void HellwithFL(int itanks){
-		 for(int i = 0; i < amountFL; i++)
-		  {       
-			 int Ammo=FL[i].getAmmo();
-//			 int Misses=FL[i].getMisses();
-			 int Target=FL[i].getTarget();  
-			 for(int j=Ammo; j>0; j--)
-			 {                         
-			   if(judge.Hit(tanks[itanks].GetChanceHit()))
-			   {
-				   Target--;
-			   }
-//				   else
-//				   { 
-//					Misses++;   
-//				   }
-		   
-			   }  
-			 PenaltyLaps=Target; 						//1. штрафные круги дописать
-		  } 
-	}
+
 	public void InitializationTank(String str[][]){
 		for (int itanks = 0; itanks < amountTanks; itanks++){           //Initialization of Stage objects massive
 			tanks[itanks] = new Tank(itanks, str);

@@ -2,7 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Interface{                   //class change to interface and read about it on http://kostin.ws/java/java-abstract-and-interfaces.html
+public class Interface{                   //class change to interface and read about it on 
+	//http://kostin.ws/java/java-abstract-and-interfaces.html
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	Scanner scn;   //!!!!!!!!!!!!!!!!!!!!!!!
 	String dataFromTheFile[][];  //!!!!!!!!!!!!!!!!!!!!!!!
@@ -16,8 +17,7 @@ public class Interface{                   //class change to interface and read a
 	{
 		OpenFile(FILE_PATH1, 6, 5); ///////////////Подсчет строк!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		OpenFile(FILE_PATH2, 3, 2);//В конструктор для ввода руками
-									/*МИССИЯ НЕВЫПОЛНИМА*/
-						
+									/*МИССИЯ НЕВЫПОЛНИМА*/				
 	}
 	
 	public void OpenFile(String filepath, int numberLines, int numberFields) 
@@ -29,7 +29,6 @@ public class Interface{                   //class change to interface and read a
 		catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
-
 	}
 	
 	public void ReadFile(int numberLines, int numberFields) 
