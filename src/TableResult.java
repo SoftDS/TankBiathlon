@@ -7,9 +7,9 @@ public class TableResult{
 		System.out.println();
 	}
 	
-	public void TableResult(int amountTanks,int amountStage){
-		String TableResult[][];
-		TableResult = new String[amountTanks][amountStage];
+	public void CreateTable(int amountTanks,int amountStage){
+		String CreateTable[][];
+		CreateTable = new String[amountTanks][amountStage];
 	}
 	
 //	public void printError(int err)

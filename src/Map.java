@@ -13,8 +13,8 @@ public class Map {
 		
 	public Map(){
 		PenaltyLaps = 0;
-		amountStage = 0;
-		amountTanks = 0;
+		amountStage = 3;
+		amountTanks = 5;
 		amountFL = amountStage;
 		stage = new Stage[amountStage];
 		FL = new FiringLine[amountFL];
@@ -41,8 +41,6 @@ public class Map {
 		for(int i = 0; i < amountStage; i++)
 		  {
 			MaxSpeed = judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(), stage[i].getPassability());
-			//judge.TimeOnLap(MaxSpeed, LengthLap) !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			
 		  }
 	}
 	public void HellwithFL(int itanks){

@@ -6,9 +6,9 @@ public class Interface{                   //class change to interface and read a
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	Scanner scn;   //!!!!!!!!!!!!!!!!!!!!!!!
 	String dataFromTheFile[][];  //!!!!!!!!!!!!!!!!!!!!!!!
-	private TableResult view = new TableResult();  //!!!!!!!!!!!!!!!!!!!!!1
-	private Map map = new Map();
-	
+	//private TableResult view = new TableResult();  //!!!!!!!!!!!!!!!!!!!!!1
+	//private Map map = new Map();  А нахуя тут вообще карта? Почему Классы вызываются в интерфейсе, а не наоборот???!
+                                    //сегодня разобрал этот класс подробно и понял что тут пиздец сколько переделывать) он же бесполезный)))	
 	public static final String FILE_PATH1 = "res/DataAboutTanks.txt";
 	public static final String FILE_PATH2 = "res/DataAboutStages.txt";
 	
