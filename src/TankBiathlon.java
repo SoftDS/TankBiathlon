@@ -3,7 +3,6 @@ public class TankBiathlon {
 	
 	public static void main(String[] args){
 
-	//=======================//
 		//Чтобы узнать количество танков или этапов у String[][] str;
 		//Делаем так!!!!!!! str.length;
 		TableResult table = new TableResult();
@@ -16,7 +15,6 @@ public class TankBiathlon {
 		//map.InitializationStage(interf.Run(2));
 		//map.InitializationFL(interf.Run(2));
 		map.BeginningThisHell(interf.Run(1), interf.Run(2));
-		//map.Print_map();
 
 		
 	

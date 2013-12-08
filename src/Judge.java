@@ -6,18 +6,11 @@ public class Judge {
 	{
 		return MaxSpeed * Passability;
 	}
-    public boolean CountHit (double ChanceHit) //////Учесть время наведения
-    {
-	    boolean HitTable[];
-	    HitTable = new boolean[10];
-	    ChanceHit= ChanceHit*10;
-	    	for (int i=0; i<ChanceHit; i++){
-	    		HitTable[i]= true;
-	    	}
-	    	int i = (int)(Math.random()*10); // вещественное число из [0;5) 
-	    	if (HitTable[i]==true)
-	    		return true; 			
-	    return false;	
+    public boolean CountHit (double ChanceHit) //Учесть время наведения
+    { 
+    	if (Math.random()<=ChanceHit)
+    		return true; 			
+    	return false;	
     }
     
     public double TimeOnLap(double MaxSpeed, int LengthLap, int Acceleration)  //Дописать нормальную формулу

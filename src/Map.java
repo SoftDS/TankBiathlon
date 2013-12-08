@@ -19,28 +19,28 @@ public class Map {
 //	}
 
 	
-	public Map(String str1[][], String str2[][]){
-		this.amountStage = str2.length;
-		this.amountTanks = str1.length;
+	public Map(String DataAboutTanks[][], String DataAboutStages[][]){
+		this.amountStage = DataAboutStages.length;
+		this.amountTanks = DataAboutTanks.length;
 		this.stage = new Stage[amountStage];
 		this.tanks = new Tank[amountTanks];
 	}
 	
-	public void BeginningThisHell(String str1[][], String str2[][]){  
+	public void BeginningThisHell(String DataAboutTanks[][], String DataAboutStages[][]){  
 		
 		double MaxSpeed;
 		int[] TimeMassive =new int [amountStage + 1];
 		
-		InitializationTank(str1);
+		InitializationTank(DataAboutTanks);
 		for (int itanks = 0; itanks < amountTanks; itanks++)
 		{
-			InitializationStage(str2);			//Для каждого танка этап заново готовится для езды
+			InitializationStage(DataAboutStages);			//Для каждого танка этап заново готовится для езды
 			//System.out.println("itanks: "+itanks);			
 			for(int i = 0; i < amountStage; i++)
 			  {
 				MaxSpeed = judge.MaxSpeedStage(tanks[itanks].GetSpeedMax(), stage[i].getPassability());
 /*Здесь нужно соханить время как 1ый танк на 1м этапе*/	//	TimeMassive[i]=judge.TimeOnLap(MaxSpeed, LengthLap, Acceleration);
-				stage[i].Hit(judge.CountHit(tanks[itanks].GetChanceHit()));                            
+				stage[i].AreYouHit(judge.CountHit(tanks[itanks].GetChanceHit()));                            
 				    if (stage[i].getTarget()>0)
 					{
 /*Здесь нужно добавить, если есть, штрафное время, к прошлому*/	TimeMassive[i] += judge.TimeOnLap(MaxSpeed, stage[i].PenaltyLaps(stage[i].getTarget()), tanks[itanks].GetAcceleration());				
@@ -50,31 +50,14 @@ public class Map {
 		}
 	}
 
-	public void InitializationTank(String str[][]){
-		//this.amountTanks = str.length;
+	public void InitializationTank(String DataAboutTanks[][]){
 		for (int itanks = 0; itanks < amountTanks; itanks++){           //Initialization of Stage objects massive
-			tanks[itanks] = new Tank(itanks, str);
+			tanks[itanks] = new Tank(itanks, DataAboutTanks);
 		}
 	}
-	public void InitializationStage(String str[][]){
-		//this.amountStage = str.length;
+	public void InitializationStage(String DataAboutStages[][]){
 		 for(int i = 0; i < amountStage; i++){
-			stage[i] = new Stage(i, str);
+			stage[i] = new Stage(i, DataAboutStages);
 		 }	
 	}
-//========================================================================	temp procedure
-	public void Print_map()
-	{
-	 	for(int it = 0; it < amountTanks; it++)
-	 	{
-	 		System.out.println(tanks[it].getName());
-	 	}
-	 	for(int ix = 0; ix < amountStage; ix++)
-	 	{
-	 		System.out.println(stage[ix].getLenghtStage());
-	 		System.out.println(stage[ix].getTarget());
-	 		
-	 	}
-	}
-//========================================================================	
 }

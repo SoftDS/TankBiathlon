@@ -17,12 +17,12 @@ public class Stage {
 		this.LenghtStage = LenghtStage;
 		this.Passability = Passability;
 }
-	public Stage(int i, String str[][]){			//Прописать exception для ввода несоотв. данных
-		this.NStage = Integer.parseInt(str[i][0]);
-		this.LenghtStage = Integer.parseInt(str[i][1]);
-		this.Passability = Double.parseDouble(str[i][2]);
-		this.LengthPenaltyLap = Integer.parseInt(str[i][3]);
-		this.Target = Integer.parseInt(str[i][4]);
+	public Stage(int IndexOfStage, String DataAboutStages[][]){			//Прописать exception для ввода несоотв. данных
+		this.NStage = Integer.parseInt(DataAboutStages[IndexOfStage][0]);
+		this.LenghtStage = Integer.parseInt(DataAboutStages[IndexOfStage][1]);
+		this.Passability = Double.parseDouble(DataAboutStages[IndexOfStage][2]);
+		this.LengthPenaltyLap = Integer.parseInt(DataAboutStages[IndexOfStage][3]);
+		setTarget(Integer.parseInt(DataAboutStages[IndexOfStage][4]));
 		setAmmo(this.Target + 1);
 	}
 	public int getLenghtStage(){
@@ -56,11 +56,11 @@ public class Stage {
 		Target = target;
 	}
 	
-	public boolean Hit(boolean b) 		//1. штрафные круги дописать
+	public boolean AreYouHit(boolean HitOrNotHitTheTarget) 		//1. штрафные круги дописать
 	{ 
 		for(int j=Ammo; j>0; j--)
 		{           
-		  if(b) //Если попал, то осталось на одну мишень меньше
+		  if(HitOrNotHitTheTarget) //Если попал, то осталось на одну мишень меньше
 		  {
 			  Target--;
 			   if(Target == 0)//если все цели сбиты

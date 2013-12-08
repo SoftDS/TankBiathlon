@@ -1,26 +1,22 @@
-
-public class TableResult{  //вообще не знаю зачем этот класс ??! =)
+//класс для хранения таблицы результатов
+public class TableResult{  
 	
-	//print table of results
-	public void printTableResult()
-	{
-		System.out.println();
+	String CommonResults[][];
+	int NumberOfTank;
+	int NumberOfStage;
+	
+	TableResult(){
+		NumberOfTank = 0;
+		NumberOfStage = 0;
 	}
-	
+
 //	public void CreateTable(String[][] str){
 //		String CreateTable[][];
 //		CreateTable = new String[amountTanks][amountStage+1];
 //	}
 	
-	//public void AddTanksResult()
-	
-	public void printData(String[][] str){
-		for(String []a: str)
-		{
-			for(String b: a)
-				System.out.print(b + " ");
-				System.out.println();
-		}
+	public void AddTanksResult(){
+
 	}
 	
 //	public void printError(int err)

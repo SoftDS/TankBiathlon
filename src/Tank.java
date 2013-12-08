@@ -20,13 +20,13 @@ public class Tank {
 //		this.timeAim = timeAim;
 //		this.chanceHit = chanceHit;	
 //	}
-	public Tank(int itanks, String str[][]){
+	public Tank(int IndexOfTank, String DataAboutTanks[][]){
 		
-		this.name = str[itanks][0];
-		this.acceleration = Integer.parseInt(str[itanks][1]);
-		this.speedMax = Integer.parseInt(str[itanks][2]);
-		this.timeAim = Integer.parseInt(str[itanks][3]);
-		this.chanceHit = Double.parseDouble(str[itanks][4]);
+		this.name = DataAboutTanks[IndexOfTank][0];
+		this.acceleration = Integer.parseInt(DataAboutTanks[IndexOfTank][1]);
+		this.speedMax = Integer.parseInt(DataAboutTanks[IndexOfTank][2]);
+		this.timeAim = Integer.parseInt(DataAboutTanks[IndexOfTank][3]);
+		this.chanceHit = Double.parseDouble(DataAboutTanks[IndexOfTank][4]);
 	}
 	public int GetAcceleration(){
 		return acceleration;
