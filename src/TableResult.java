@@ -7,12 +7,12 @@ public class TableResult{  //вообще не знаю зачем этот класс ??! =)
 		System.out.println();
 	}
 	
-	public void CreateTable(String[][] str){
-		String CreateTable[][];
-		CreateTable = new String[amountTanks][amountStage+1];
-	}
+//	public void CreateTable(String[][] str){
+//		String CreateTable[][];
+//		CreateTable = new String[amountTanks][amountStage+1];
+//	}
 	
-	public void AddTanksResult()
+	//public void AddTanksResult()
 	
 	public void printData(String[][] str){
 		for(String []a: str)

@@ -1,9 +1,11 @@
 
 public class Stage {
-	private int NStage;                         //#Stage
-	private int LenghtStage;					//Length				(m)
+	private int NStage;						//#Stage
+	private int LenghtStage;				//Length				(m)
 	private double Passability;				//Passability		(0;1)
-	private int LengthPenaltyLap;           //Penalty
+	private int LengthPenaltyLap;			//Penalty
+	private int Target;						//number of targets
+	private int Ammo;						//number of ammo
 	
 	
 	public Stage(){
@@ -20,6 +22,8 @@ public class Stage {
 		this.LenghtStage = Integer.parseInt(str[i][1]);
 		this.Passability = Double.parseDouble(str[i][2]);
 		this.LengthPenaltyLap = Integer.parseInt(str[i][3]);
+		this.Target = Integer.parseInt(str[i][4]);
+		setAmmo(this.Target + 1);
 	}
 	public int getLenghtStage(){
 		return LenghtStage;
@@ -33,6 +37,36 @@ public class Stage {
 		return NStage;
 	}
 	public int PenaltyLaps(int Penalty){	
-	return LengthPenaltyLap*Penalty;	
+		return LengthPenaltyLap*Penalty;	
+	}
+	
+	public int getAmmo() {
+		return Ammo;
+	}
+
+	public void setAmmo(int ammo) {
+		Ammo = ammo;
+	}
+	
+	public int getTarget() {
+		return Target;
+	}
+
+	public void setTarget(int target) {
+		Target = target;
+	}
+	
+	public boolean Hit(boolean b) 		//1. штрафные круги дописать
+	{ 
+		for(int j=Ammo; j>0; j--)
+		{           
+		  if(b) //Если попал, то осталось на одну мишень меньше
+		  {
+			  Target--;
+			   if(Target == 0)//если все цели сбиты
+				   return true;			   
+		  }	   
+		}  
+		return false; //если НЕ все цели сбиты
 	}
 }
